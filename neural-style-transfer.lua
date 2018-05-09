@@ -200,7 +200,7 @@ function save_output_img(save_iter, num_iterations, t, img)
         local disp = vgg_img_process().deprocess(img:double())
 
         disp = image.minmax{tensor=disp, min=0, max=1}
-        filename = string.format('$s_%d.%s', 'output', iteration, 'png')
+        filename = string.format('%s_%d.%s', 'output', t, 'png')
 
         image.save(filename, disp)
     end
